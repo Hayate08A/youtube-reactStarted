@@ -1,7 +1,18 @@
-import './App.css';
+import React from 'react';
 
-function App() {
-  return <div className='App'>halloWorld</div>;
-}
+import Button from './Button';
+
+const App = () => {
+  return (
+    <div>
+      <div>App</div>
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+    </div>
+  );
+};
 
 export default App;
