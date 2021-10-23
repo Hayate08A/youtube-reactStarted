@@ -1,16 +1,19 @@
 import React from 'react';
 
 type TButton = {
+  className?: string;
   title: string;
-  color?: string;
+  onClick: () => void;
 };
 
 export const Button = (props: TButton) => {
-  const { title: text } = props;
+  const { title, onClick, className } = props;
   return (
-    <button className='ui basic button'>
+    <button className={className ? className : ''} onClick={onClick}>
       <i className='icon user'></i>
-      {text}
+      {title}
     </button>
   );
 };
+
+export default Button;
