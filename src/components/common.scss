@@ -1,4 +1,4 @@
-@mixin debug($background: #fff, $outlineColor: red) {
+@mixin debug($outlineColor: #ff0000, $background: #fff) {
   outline: solid 3px $outlineColor;
   background: $background;
 }

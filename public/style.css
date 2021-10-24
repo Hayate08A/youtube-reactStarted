@@ -1,5 +1,10 @@
 .app_container {
-  outline: solid 3px red;
+  outline: solid 3px #ff0000;
+  background: #fff;
+}
+
+.button_container {
+  outline: solid 3px #00ff00;
   background: #fff;
 }
 
