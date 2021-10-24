@@ -1,0 +1,4 @@
+@mixin debug($background: #fff, $outlineColor: red) {
+  outline: solid 3px $outlineColor;
+  background: $background;
+}

@@ -1,5 +1,6 @@
 .app_container {
-  background: purple;
+  outline: solid 3px red;
+  background: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
