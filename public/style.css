@@ -1,6 +1,7 @@
 .app_container {
   outline: solid 3px #ff0000;
   background: #fff;
+  margin-top: 30px;
 }
 
 .button_container {
