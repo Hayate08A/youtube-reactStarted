@@ -12,13 +12,9 @@ const Counter = () => {
   return (
     <>
       <p>Count: {count}</p>
+      <Button buttonColor={'primary'} onClick={onCountUp} title='CountUp' />
       <Button
-        className={'ui primary button'}
-        onClick={onCountUp}
-        title='CountUp'
-      />
-      <Button
-        className={'ui red button'}
+        buttonColor={'red'}
         onClick={onCountDown}
         title='CountDown'
       ></Button>

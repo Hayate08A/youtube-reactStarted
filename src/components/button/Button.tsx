@@ -1,15 +1,18 @@
 import React from 'react';
 
 type TButton = {
-  className?: string;
   title: string;
   onClick: () => void;
+  buttonColor?: string;
 };
 
 export const Button = (props: TButton) => {
-  const { title, onClick, className } = props;
+  const { title, onClick, buttonColor } = props;
   return (
-    <button className={className ? className : ''} onClick={onClick}>
+    <button
+      className={`ui ${buttonColor ? buttonColor : ''}  button`}
+      onClick={onClick}
+    >
       <i className='icon user'></i>
       {title}
     </button>
