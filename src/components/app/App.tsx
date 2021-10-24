@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Counter from './component/Counter';
+import Counter from '../counter/Counter';
 
 export const App = () => {
   return (
-    <div className='container'>
+    <div className='ui container app_container'>
       <Counter />
     </div>
   );
