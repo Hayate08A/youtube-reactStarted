@@ -4,6 +4,7 @@ import Counter from '../counter/Counter';
 import Button from '../button/Button';
 import jsonplaceholder from '../../apis/jsonplaceholder';
 import Resources from '../resources/Resources';
+import SearchBar from '../searchBar/SearchBar';
 
 export const App = () => {
   const [resources, setResources] = useState([]);
@@ -16,7 +17,6 @@ export const App = () => {
       console.log(error);
     }
   };
-
   const getAlbums = async () => {
     try {
       const albums = await jsonplaceholder.get('/albums');
@@ -28,6 +28,8 @@ export const App = () => {
 
   return (
     <div className='ui container app_container'>
+      <SearchBar />
+      <></>
       <Button onClick={getPosts} buttonColor='primary' title='posts' />
       <Button onClick={getAlbums} buttonColor='red' title='albums' />
       <Resources resources={resources} />
