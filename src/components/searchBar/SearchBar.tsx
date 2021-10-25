@@ -1,16 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const SearchBar = () => {
+type TSearchBar = {
+  onSubmit: (text: string) => void;
+};
+
+const SearchBar = (props: TSearchBar) => {
+  const [term, setTerm] = useState('');
   const onFormSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    console.log('onSubmit');
+    props.onSubmit(term);
   };
   return (
     <div className='search_bar_container'>
       <form className='ui form' onSubmit={onFormSubmit}>
         <div className='field'>
           <label>Image Search</label>
-          <input type='text' name='search' placeholder='' />
+          <input
+            type='text'
+            name='search'
+            placeholder=''
+            value={term}
+            onChange={(event) => {
+              setTerm(event.target.value);
+            }}
+          />
         </div>
       </form>
     </div>

@@ -8,6 +8,9 @@ import SearchBar from '../searchBar/SearchBar';
 
 export const App = () => {
   const [resources, setResources] = useState([]);
+  const onSearchSubmit = (term: string) => {
+    console.log(term);
+  };
 
   const getPosts = async () => {
     try {
@@ -28,7 +31,7 @@ export const App = () => {
 
   return (
     <div className='ui container app_container'>
-      <SearchBar />
+      <SearchBar onSubmit={onSearchSubmit} />
       <></>
       <Button onClick={getPosts} buttonColor='primary' title='posts' />
       <Button onClick={getAlbums} buttonColor='red' title='albums' />
