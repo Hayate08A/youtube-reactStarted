@@ -1,5 +1,3 @@
-import React from 'react';
-
 type TResource = {
   id: number;
   title: string;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 type TButton = {
   title: string;
   onClick: () => void;
