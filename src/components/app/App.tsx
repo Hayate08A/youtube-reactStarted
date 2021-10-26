@@ -7,6 +7,7 @@ import jsonplaceholder from '../../apis/jsonplaceholder';
 import Resources from '../resources/Resources';
 import SearchBar from '../searchBar/SearchBar';
 import ImageList from '../imageList/ImageList';
+import pixabayLogo from '../../logo.png';
 
 export const App = () => {
   const [resources, setResources] = useState([]);
@@ -50,6 +51,7 @@ export const App = () => {
 
   return (
     <div className='ui container app_container'>
+      <img src={pixabayLogo} alt='pixabay-logo' />
       <SearchBar onSubmit={onSearchSubmit} />
       <ImageList images={images} />
       <></>
