@@ -2,7 +2,7 @@ type TImage = {
   pageURL: string;
   id: string;
   tags: string;
-  webFormatURL: string;
+  webformatURL: string;
 };
 
 type TImageList = {
@@ -19,7 +19,7 @@ export const ImageList = (props: TImageList) => {
         rel='noopener noreferrer'
         className='ui medium image'
       >
-        <img src={image.webFormatURL} alt={image.tags} />
+        <img src={image.webformatURL} alt={image.tags} />
       </a>
     );
   });
