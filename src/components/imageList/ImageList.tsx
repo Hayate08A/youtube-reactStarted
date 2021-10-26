@@ -25,7 +25,7 @@ export const ImageList = (props: TImageList) => {
       </a>
     );
   });
-  return <Masonry className='image-list'>{images}</Masonry>;
+  return <Masonry className='image_list'>{images}</Masonry>;
 };
 
 export default ImageList;

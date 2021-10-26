@@ -1,4 +1,7 @@
 .app_container {
   @include debug();
   margin-top: 30px;
+  .pixabay_logo {
+    width: 200px;
+  }
 }

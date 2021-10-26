@@ -51,7 +51,7 @@ export const App = () => {
 
   return (
     <div className='ui container app_container'>
-      <img src={pixabayLogo} alt='pixabay-logo' />
+      <img src={pixabayLogo} alt='pixabay_logo' className='pixabay_logo' />
       <SearchBar onSubmit={onSearchSubmit} />
       <ImageList images={images} />
       <></>
