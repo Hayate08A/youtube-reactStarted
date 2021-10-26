@@ -11,7 +11,7 @@ const SearchBar = (props: TSearchBar) => {
     props.onSubmit(term);
   };
   return (
-    <div className='search_bar_container'>
+    <div className='search_bar_container ui segment'>
       <form className='ui form' onSubmit={onFormSubmit}>
         <div className='field'>
           <label>Image Search</label>
