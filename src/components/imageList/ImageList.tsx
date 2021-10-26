@@ -1,3 +1,5 @@
+import Masonry from 'react-masonry-component';
+
 type TImage = {
   pageURL: string;
   id: string;
@@ -23,7 +25,7 @@ export const ImageList = (props: TImageList) => {
       </a>
     );
   });
-  return <div>{images}</div>;
+  return <Masonry className='image-list'>{images}</Masonry>;
 };
 
 export default ImageList;
