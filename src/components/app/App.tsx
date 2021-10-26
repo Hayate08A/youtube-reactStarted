@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 import Counter from '../counter/Counter';
 import Button from '../button/Button';
@@ -8,8 +9,24 @@ import SearchBar from '../searchBar/SearchBar';
 
 export const App = () => {
   const [resources, setResources] = useState([]);
-  const onSearchSubmit = (term: string) => {
-    console.log(term);
+  const [images, setImages] = useState([]);
+  const onSearchSubmit = async (term: string) => {
+    try {
+      const params = {
+        key: '24045155-662d84a420de2f3cb979e6fa8',
+        q: term,
+      };
+      const response: any = await axios.get('https://pixabay.com/api', {
+        params,
+      });
+      console.log(response);
+      setImages(response.data.hits);
+      if (response.data.total === 0) {
+        window.alert('検索結果 : 0');
+      }
+    } catch {
+      window.alert('取得失敗');
+    }
   };
 
   const getPosts = async () => {
