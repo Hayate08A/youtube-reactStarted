@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 type TImage = {
   pageURL: string;
   id: string;
@@ -11,7 +9,7 @@ type TImageList = {
   images: TImage[];
 };
 
-const ImageList = (props: TImageList) => {
+export const ImageList = (props: TImageList) => {
   const images = props.images.map((image) => {
     return (
       <a
@@ -27,3 +25,5 @@ const ImageList = (props: TImageList) => {
   });
   return <div>{images}</div>;
 };
+
+export default ImageList;
