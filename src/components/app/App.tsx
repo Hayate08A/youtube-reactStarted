@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { useState } from "react";
+import axios from "axios";
 
-import Counter from '../counter/Counter';
-import Button from '../button/Button';
-import jsonplaceholder from '../../apis/jsonplaceholder';
-import Resources from '../resources/Resources';
-import SearchBar from '../searchBar/SearchBar';
-import ImageList from '../imageList/ImageList';
-import pixabayLogo from '../../logo.png';
+import Counter from "../counter/Counter";
+import Button from "../button/Button";
+import jsonplaceholder from "../../apis/jsonplaceholder";
+import Resources from "../resources/Resources";
+import SearchBar from "../searchBar/SearchBar";
+import ImageList from "../imageList/ImageList";
+import pixabayLogo from "../../logo.png";
 
 export const App = () => {
   const [resources, setResources] = useState([]);
@@ -19,22 +19,22 @@ export const App = () => {
         key: ApiKey,
         q: term,
       };
-      const response: any = await axios.get('https://pixabay.com/api', {
+      const response: any = await axios.get("https://pixabay.com/api", {
         params,
       });
       console.log(response);
       setImages(response.data.hits);
       if (response.data.total === 0) {
-        window.alert('検索結果 : 0');
+        window.alert("検索結果 : 0");
       }
     } catch {
-      window.alert('取得失敗');
+      window.alert("取得失敗");
     }
   };
 
   const getPosts = async () => {
     try {
-      const posts = await jsonplaceholder.get('/post');
+      const posts = await jsonplaceholder.get("/posts");
       setResources(posts.data as []);
     } catch (error) {
       console.log(error);
@@ -42,7 +42,7 @@ export const App = () => {
   };
   const getAlbums = async () => {
     try {
-      const albums = await jsonplaceholder.get('/albums');
+      const albums = await jsonplaceholder.get("/albums");
       setResources(albums.data as []);
     } catch (error) {
       console.log(error);
@@ -50,13 +50,13 @@ export const App = () => {
   };
 
   return (
-    <div className='ui container app_container'>
-      <img src={pixabayLogo} alt='pixabay_logo' className='pixabay_logo' />
+    <div className="ui container app_container">
+      <img src={pixabayLogo} alt="pixabay_logo" className="pixabay_logo" />
       <SearchBar onSubmit={onSearchSubmit} />
       <ImageList images={images} />
       <></>
-      <Button onClick={getPosts} buttonColor='primary' title='posts' />
-      <Button onClick={getAlbums} buttonColor='red' title='albums' />
+      <Button onClick={getPosts} buttonColor="primary" title="posts" />
+      <Button onClick={getAlbums} buttonColor="red" title="albums" />
       <Resources resources={resources} />
       <Counter />
     </div>
